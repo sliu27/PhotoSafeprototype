@@ -1,0 +1,156 @@
+	
+
+	<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+</head>
+
+<body>                                 
+<div id="banner">                        <!--div = defines a section of the document-->
+
+<div class="section black" id="section1">
+<h2>About</h2>
+<p>
+		PhotoSafe is a chrome extension that sensors triggering images.
+</p>
+<ul class="nav">
+		<li>About</li>
+		<li><a href="#section2">Testimonials</a></li>
+		<li><a href="#section3">Contact</a></li>
+</ul>
+</div>
+
+<div class="section white" id="section2">
+<h2>Testimonials</h2>
+	<p>
+		"Photosafe is gr8. 10/10 would recommend" -Brown Student
+	</p>
+
+	<p>
+		"They did such a neat job I can't even" -Sachin
+	</p>
+	<ul class="nav">
+		<li><a href="#section1">About</a></li>
+		<li>Testimonials</li>
+		<li><a href="#section3">Contact</a></li>
+	</ul>
+</div>
+
+<div class="section black" id="section3">
+<h2>Contact Us</h2>
+	<p>
+		Have any questions or want to submit feedback?
+
+		Email us at photosafe132@gmail.com
+	</p>
+	<ul class="nav">
+		<li><a href="#section1">About</a></li>
+		<li><a href="#section2">Testimonials</a></li>
+		<li>Contact</li>
+	</ul>
+</div>
+</div>
+<!-- ##################################################################################-->
+
+
+<!-- MAKING THE WEBSITE PRETTY.  -->
+<style>                                 /* style = the beginning of CSS code */
+  *{
+    margin:0;
+    padding:0;
+}
+  body{                                 /* body = creates CSS that applies to the entire body of the HTML page */
+    background-color: #98FB98;
+   /* width:12000px;*/
+   position:absolute;
+    top:0px;
+    left:0px;
+    bottom:0px;
+
+  }
+  #banner                               /* #banner = this references the banner id we created on line 24 */
+  {
+    width:500px;
+    height:200px;
+    text-align:center;
+    background-repeat:no-repeat;
+    border-radius:5px;
+    margin:90px auto auto;
+    padding:80px 0;
+    font-family:Arial, sans-serif;
+    text-shadow:2px 0 15px #292929;
+    letter-spacing:4px;
+    text-decoration:none;
+    color:#FFFFFF;
+  }
+  .section{
+    margin:0px;
+    height:4000px;
+    width:100%;
+    float:left;
+}
+
+.section h2{
+    margin:50px 0px 30px 50px;
+    text-align:center;
+}
+.section p{
+    margin:20px 0px 0px 50px;
+    width:600px;
+}
+
+.section ul{
+    list-style:none;
+    margin:20px 0px 0px 550px;
+}
+.black ul li{
+    float:left;
+    padding:5px;
+    margin:5px;
+}
+.black ul li a{
+    display:block;
+}
+.black ul li a:hover{
+    text-decoration:none;
+}
+.white ul li{
+    float:left;
+    padding:5px;
+    margin:5px;
+}
+.white ul li a{
+    display:block;
+}
+.white ul li a:hover{
+    text-decoration:none;
+}
+
+
+</style>
+<!-- ##################################################################################-->
+
+<script>
+$(function() {
+	$('ul.nav a').bind('click',function(event){
+		var $anchor = $(this);
+
+		$('html, body').stop().animate({
+			scrollTop: $($anchor.attr('href')).offset().top
+		}, 1500,'easeInOutExpo');
+		/*
+		if you don't want to use the easing effects:
+		$('html, body').stop().animate({
+			scrollTop: $($anchor.attr('href')).offset().top
+		}, 1000);
+		*/
+		event.preventDefault();
+	});
+});
+</script>
+</body>
+</html>
